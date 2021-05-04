@@ -1,0 +1,8 @@
+onnxruntime==1.6.0
+onnx==1.8.0
+torch==1.8.1
+decorator==4.3.2
+numpy==1.19.5
+gradio==1.6.4
+opencv_python==4.5.1.48
+setuptools==44.0.0
