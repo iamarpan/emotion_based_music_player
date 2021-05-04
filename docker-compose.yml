@@ -1,0 +1,22 @@
+version: "3.3"
+
+services:
+  music_player:
+    ports:
+      - "7000:3000"
+    image: music_player
+    build:
+      context: ./player
+      dockerfile: Dockerfile
+    container_name: player
+
+    camera_app:
+      ports:
+        - "7001:3000"
+      image: camera_app
+      build: 
+        context: ./emotion_detector
+        dockerfile: Dockerfile
+      container_name: emotion_detector
+
+
