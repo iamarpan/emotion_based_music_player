@@ -1,0 +1,11 @@
+Flask==1.1.2
+numpy==1.19.5
+keyring==18.0.1
+gradio==1.6.4
+backports.statistics==0.1.0
+Cython==0.29.23
+ipaddr==2.2.0
+mypy_extensions==0.4.3
+ordereddict==1.1
+wincertstore==0.2
+decorator==4.3.2

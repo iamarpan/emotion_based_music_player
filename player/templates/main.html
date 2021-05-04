@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='main.css')}}">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+<body>
+<div class="background"></div>
+<section>
+  <div class="album-info">
+    <div class="album-art"><img src="https://www.trf.org/wp-content/uploads/2015/06/imagine-dragonspapermag.jpg"/>
+      <div class="actions">
+	      <div class="play" style="cursor:pointer" onclick="playSong('{{songs[0]}}',{{songs}},{{data}})">Play</div>
+        </div>
+      </div>
+    </div>
+    <div class="album-details">
+	    <h2> <img src="https://68.media.tumblr.com/avatar_edbd71e8c8ac_128.png"/>{{data['title']}}</h2>
+      <h1>{{data['quote']}}</h1><span> <span>Hard Rock </span><span>&copy; 2016 Atlantic Recording Corporation</span></span>
+      <p>Unleashed is the tenth album by American Christian rock band Skillet, released on August 5, 2016. The album was announced on May 20, 2016, and a lyric video was released for the track "Feel Invincible" at the same time on the band's YouTube channel. Six days later, the band released a lyric video for the track "Stars" on their YouTube channel.</p>
+    </div>
+  </div>
+  <div class="album-tracks">
+    <ol>
+	    {% for song in songs %}
+	    <li>
+		    <span><a href="javascript:void(0)" onclick="playSong('{{song}}',{{songs}},{{data}})">{{song.split(".")[0]}}</a></span>
+	    </li>
+	{% endfor %}
+    </ol>
+  </div>
+  <audio controls="controls" autoplay="autoplay"></audio>
+  <div><b></b></div>
+  <script type="text/javascript">
+	function playSong(song,songs,data){
+		emotion=data['emotion']
+		index = songs.indexOf(song)
+		let player = document.querySelector("audio")
+		function next(){
+			if(index===songs.length - 1){
+				index=0;
+			}else{
+				index++;
+			}
+			player.src = 'static/songs/' + emotion+ "/" +songs[index];
+			$('b').text(songs[index].split(".")[0])
+
+		}
+		  if(player === null){
+			throw "player does not exist"
+		  }else{
+			player.src = 'static/songs/' + emotion +"/" + songs[index];
+			$('b').text(songs[index].split(".")[0])
+			player.addEventListener('ended',next,false)
+		  }
+	}	  
+  </script>
+</section>
+</body>
+</html>
