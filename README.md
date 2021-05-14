@@ -28,6 +28,8 @@ Both the services are dockerized using dockerfile. To run the complete applicati
 # Demo
 The application is hosted on heroku and you can directly play around with it using the following URL: [emo-music-app](https://emo-music-app.herokuapp.com/).
 
-[camera](./assets/camera.png)
-[player](./assets/Player1.png)
-[player](./assets/player2.png)
+![Screenshot](./assets/camera.png)
+
+![Screenshot](./assets/Player1.png)
+
+![Screenshot](./assets/player2.png)
